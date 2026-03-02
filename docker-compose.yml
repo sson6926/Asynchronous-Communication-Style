@@ -1,0 +1,26 @@
+services:
+
+  rabbitmq2:
+    image: rabbitmq:3-management
+    container_name: rabbitmq2
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  producer:
+    build: ./ProducerApp
+    container_name: producer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rabbitmq2
+    environment:
+      SPRING_RABBITMQ_HOST: rabbitmq2
+      SERVER_PORT: 8080
+
+  worker:
+    build: ./ConsumerApp
+    depends_on:
+      - rabbitmq2
+    environment:
+      SPRING_RABBITMQ_HOST: rabbitmq2
