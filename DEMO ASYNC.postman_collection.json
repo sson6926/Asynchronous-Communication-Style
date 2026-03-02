@@ -1,0 +1,51 @@
+{
+  "info": {
+    "_postman_id": "bdbb3c06-d008-4311-a38b-d07db8dd5e64",
+    "name": "DEMO ASYNC",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23893529"
+  },
+  "item": [
+    {
+      "name": "Transcode Demo Async",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/transcode",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "transcode"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Transcode Sync",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/transcode/sync",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "transcode",
+            "sync"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
